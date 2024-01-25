@@ -25,143 +25,25 @@ struct ContentView: View {
                                     VStack(alignment: .leading) {
                                         ForEach(makeListOfString(text: text.content), id: \.self) { item in
                                             
-                                            if let index = item.range(of: "Krankenkasse bzw. Kostenträger")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
-                                                if percentage >= 0.8 {
-                                                    // Extract the next item and display it
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let insuranceNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Krankenkasse bzw. Kostenträger: \(insuranceNameItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Name, Vorname des Versicherten")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
+                                            extractAndDisplayScanInfo(header: ["Nachname","Vorname", "Strasse", "Ort"], wholeString: text, item: item, checkAgainst: "Name, Vorname des Versicherten", numberOfShownItems: 4)
 
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let lastNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        let firstNameItem = makeListOfString(text: text.content)[nextItemIndex + 2]
-                                                        let streetItem = makeListOfString(text: text.content)[nextItemIndex + 3]
-                                                        let cityItem = makeListOfString(text: text.content)[nextItemIndex + 4]
-                                                        Text("Vorname: \(firstNameItem)")
-                                                        Text("Nachname: \(lastNameItem)")
-                                                        Text("Straße: \(streetItem)")
-                                                        Text("Stadt: \(cityItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "geb. am")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let dateOfBirthNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Geburtsdatum: \(dateOfBirthNameItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Kassen-Nr.")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let insuranceNumberItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Kassennummer: \(insuranceNumberItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Versicherten-Nr.")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let patientNumberItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Versichertennummer: \(patientNumberItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Status")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let statusItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Status: \(statusItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Betriebsstätten-Nr.")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let betriebsItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Betriebsstättennummer: \(betriebsItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Arzt-Nr.")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let arztItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Arztnummer: \(arztItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Datum")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let dateItem = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        Text("Datum: \(dateItem)")
-                                                    }
-                                                }
-                                            }
-                                            
-                                            if let index = item.range(of: "Rp. (Bitte Leerräume durchstreichen)")?.lowerBound {
-                                                let substring = item.suffix(from: index)
-                                                let percentage = Double(substring.count) / Double(item.count)
-
-                                                if percentage >= 0.8 {
-                                                    if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
-                                                        let med1 = makeListOfString(text: text.content)[nextItemIndex + 1]
-                                                        let med2 = makeListOfString(text: text.content)[nextItemIndex + 2]
-                                                        let med3 = makeListOfString(text: text.content)[nextItemIndex + 3]
-                                                        let med4 = makeListOfString(text: text.content)[nextItemIndex + 4]
-                                                        Text("Verordnung:")
-                                                        Text(med1)
-                                                        Text(med2)
-                                                        Text(med3)
-                                                        Text(med4)
-                                                        
-                                                    }
-                                                }
-                                            }
+                                            extractAndDisplayScanInfo(header: ["Krankenkasse bzw. Kostenträger"], wholeString: text, item: item, checkAgainst: "Krankenkasse bzw. Kostenträger", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Geburtstdatum"], wholeString: text, item: item, checkAgainst: "geb. am", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Kassennummer"], wholeString: text, item: item, checkAgainst: "Kassen-Nr.", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Versichertennummer"], wholeString: text, item: item, checkAgainst: "Versicherten-Nr.", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Status"], wholeString: text, item: item, checkAgainst: "Status", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Betriebsstättennummer"], wholeString: text, item: item, checkAgainst: "Betriebsstätten-Nr.", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Arztnummer"], wholeString: text, item: item, checkAgainst: "Arzt-Nr.", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Datum"], wholeString: text, item: item, checkAgainst: "Datum", numberOfShownItems: 1)
+                                        
+                                            extractAndDisplayScanInfo(header: ["Verordnung"], wholeString: text, item: item, checkAgainst: "Rp. (Bitte Leerräume durchstreichen", numberOfShownItems: 4)
                                         }
                                     }
                                 },
@@ -209,11 +91,45 @@ struct ContentView: View {
     
     private func makeListOfString(text: String) -> [String] {
         let stringList = text.components(separatedBy: "\n")
-        
         for item in stringList {
             print(item)
         }
+        
         return stringList
+    }
+    
+    @ViewBuilder
+    private func displayInformation(header: [String], showItems: [String]) -> some View {
+        if !header.isEmpty && !showItems.isEmpty {
+            VStack(alignment: .leading) {
+                ForEach(0..<min(header.count, showItems.count), id: \.self) { index in
+                    Text("\(header[index]): \(showItems[index])")
+                }
+            }
+        } else {
+            EmptyView()
+        }
+    }
+
+    private func extractAndDisplayScanInfo(header: [String], wholeString: ScanData, item: String, checkAgainst: String, numberOfShownItems: Int) -> some View {
+        if let index = item.range(of: checkAgainst)?.lowerBound {
+            let substring = item.suffix(from: index)
+            let percentage = Double(substring.count) / Double(item.count)
+            var showDataItems: [String] = []
+            
+            if percentage >= 0.9 {
+                if let nextItemIndex = makeListOfString(text: wholeString.content).firstIndex(of: item) {
+                    for index in 1...numberOfShownItems {
+                        showDataItems.append(makeListOfString(text: wholeString.content)[nextItemIndex + index])
+                    }
+                    return displayInformation(header: header, showItems: showDataItems)
+                }
+            }
+            else {
+                return displayInformation(header: ["Foto unklar"], showItems: [])
+            }
+        }
+        return displayInformation(header: [], showItems: [])
     }
 }
 
