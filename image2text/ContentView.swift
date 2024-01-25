@@ -33,7 +33,7 @@ struct ContentView: View {
                                                 
                                                 // Check if the percentage is at least 80%
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
+                                                    // Extract the next item and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let insuranceNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Krankenkasse bzw. Kostenträger: \(insuranceNameItem)")
@@ -43,13 +43,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Name, Vorname des Versicherten")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
+
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let lastNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         let firstNameItem = makeListOfString(text: text.content)[nextItemIndex + 2]
@@ -65,13 +61,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "geb. am")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
                                                 
-                                                // Check if the percentage is at least 80%
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let dateOfBirthNameItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Geburtsdatum: \(dateOfBirthNameItem)")
@@ -81,13 +73,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Kassen-Nr.")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
                                                 
-                                                // Check if the percentage is at least 80%
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let insuranceNumberItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Kassennummer: \(insuranceNumberItem)")
@@ -97,13 +85,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Versicherten-Nr.")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
                                                 
-                                                // Check if the percentage is at least 80%
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let patientNumberItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Versichertennummer: \(patientNumberItem)")
@@ -113,13 +97,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Status")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
+                                
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let statusItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Status: \(statusItem)")
@@ -129,13 +109,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Betriebsstätten-Nr.")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
+
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let betriebsItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Betriebsstättennummer: \(betriebsItem)")
@@ -145,13 +121,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Arzt-Nr.")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
+
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let arztItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Arztnummer: \(arztItem)")
@@ -161,13 +133,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Datum")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
                                                 
-                                                // Check if the percentage is at least 80%
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let dateItem = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         Text("Datum: \(dateItem)")
@@ -177,13 +145,9 @@ struct ContentView: View {
                                             
                                             if let index = item.range(of: "Rp. (Bitte Leerräume durchstreichen)")?.lowerBound {
                                                 let substring = item.suffix(from: index)
-                                                
-                                                // Calculate the percentage of the specified string in the current item
                                                 let percentage = Double(substring.count) / Double(item.count)
-                                                
-                                                // Check if the percentage is at least 80%
+
                                                 if percentage >= 0.8 {
-                                                    // Extract the next item (assuming it's the name) and display it
                                                     if let nextItemIndex = makeListOfString(text: text.content).firstIndex(of: item) {
                                                         let med1 = makeListOfString(text: text.content)[nextItemIndex + 1]
                                                         let med2 = makeListOfString(text: text.content)[nextItemIndex + 2]
@@ -198,8 +162,6 @@ struct ContentView: View {
                                                     }
                                                 }
                                             }
-                                            
-                                            
                                         }
                                     }
                                 },
@@ -247,12 +209,10 @@ struct ContentView: View {
     
     private func makeListOfString(text: String) -> [String] {
         let stringList = text.components(separatedBy: "\n")
-
-        // Print the resulting list
+        
         for item in stringList {
             print(item)
         }
-        
         return stringList
     }
 }
