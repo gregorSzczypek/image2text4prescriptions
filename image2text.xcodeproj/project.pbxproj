@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B04D5CB2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04D5CA2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift */; };
 		2B4515482B61A5BF00B3F8B4 /* image2textApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4515472B61A5BF00B3F8B4 /* image2textApp.swift */; };
 		2B45154A2B61A5BF00B3F8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4515492B61A5BF00B3F8B4 /* ContentView.swift */; };
 		2B45154C2B61A5C100B3F8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B45154B2B61A5C100B3F8B4 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B04D5CA2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionInfoViewFactory.swift; sourceTree = "<group>"; };
 		2B4515442B61A5BF00B3F8B4 /* image2text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = image2text.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4515472B61A5BF00B3F8B4 /* image2textApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image2textApp.swift; sourceTree = "<group>"; };
 		2B4515492B61A5BF00B3F8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				2B4515552B61A6BC00B3F8B4 /* scanData.swift */,
 				2B4515572B61A98A00B3F8B4 /* ScannerView.swift */,
 				2B4515592B61ABEC00B3F8B4 /* TextRecognizer.swift */,
+				2B04D5CA2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift */,
 				2B45154B2B61A5C100B3F8B4 /* Assets.xcassets */,
 				2B45154D2B61A5C100B3F8B4 /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4515562B61A6BC00B3F8B4 /* scanData.swift in Sources */,
+				2B04D5CB2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift in Sources */,
 				2B4515582B61A98A00B3F8B4 /* ScannerView.swift in Sources */,
 				2B45155A2B61ABEC00B3F8B4 /* TextRecognizer.swift in Sources */,
 				2B45154A2B61A5BF00B3F8B4 /* ContentView.swift in Sources */,
