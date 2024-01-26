@@ -40,6 +40,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B04D5CC2B63ED3400C70D4A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B4515492B61A5BF00B3F8B4 /* ContentView.swift */,
+				2B4515572B61A98A00B3F8B4 /* ScannerView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B04D5CD2B63ED5200C70D4A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2B4515592B61ABEC00B3F8B4 /* TextRecognizer.swift */,
+				2B04D5CA2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2B04D5CE2B63ED6900C70D4A /* Datamodels */ = {
+			isa = PBXGroup;
+			children = (
+				2B4515552B61A6BC00B3F8B4 /* scanData.swift */,
+			);
+			path = Datamodels;
+			sourceTree = "<group>";
+		};
 		2B45153B2B61A5BF00B3F8B4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				2B4515472B61A5BF00B3F8B4 /* image2textApp.swift */,
-				2B4515492B61A5BF00B3F8B4 /* ContentView.swift */,
-				2B4515552B61A6BC00B3F8B4 /* scanData.swift */,
-				2B4515572B61A98A00B3F8B4 /* ScannerView.swift */,
-				2B4515592B61ABEC00B3F8B4 /* TextRecognizer.swift */,
-				2B04D5CA2B63E94400C70D4A /* PrescriptionInfoViewFactory.swift */,
+				2B04D5CC2B63ED3400C70D4A /* UI */,
+				2B04D5CD2B63ED5200C70D4A /* Utilities */,
+				2B04D5CE2B63ED6900C70D4A /* Datamodels */,
 				2B45154B2B61A5C100B3F8B4 /* Assets.xcassets */,
 				2B45154D2B61A5C100B3F8B4 /* Preview Content */,
 			);
